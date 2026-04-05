@@ -20,6 +20,7 @@ export const TABLES = {
   socialPosts:   process.env.TABLE_SOCIAL_POSTS!,
   metrics:       process.env.TABLE_METRICS!,
   context:       process.env.TABLE_CONTEXT!,
+  webAnalysis:   process.env.TABLE_WEB_ANALYSIS!,
 } as const
 
 export const DEMO_HOTEL_ID = process.env.DEMO_HOTEL_ID ?? '1'
@@ -151,6 +152,14 @@ export async function getMetrics(hotelId = DEMO_HOTEL_ID) {
     where: `(hotel_id,eq,${hotelId})`,
     sort: '-period_from',
     limit: 100,
+  })
+}
+
+export async function getWebAnalysis(hotelId = DEMO_HOTEL_ID) {
+  return nocoFetch<Record<string, unknown>>(TABLES.webAnalysis, {
+    where: `(hotel_id,eq,${hotelId})`,
+    sort: '-priority',
+    limit: 200,
   })
 }
 

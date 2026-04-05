@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard, ListChecks, Star, Globe, BarChart3,
-  Instagram, Settings, History, Zap, ExternalLink,
+  Instagram, Settings, History, Zap, ExternalLink, Monitor,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -15,6 +15,7 @@ const navItems = [
   { href: '/dashboard/offers', label: 'Ofertas', Icon: Globe },
   { href: '/dashboard/social', label: 'Social Media', Icon: Instagram },
   { href: '/dashboard/metrics', label: 'Métricas', Icon: BarChart3 },
+  { href: '/dashboard/website', label: 'Análisis web', Icon: Monitor },
   { href: '/dashboard/history', label: 'Historial', Icon: History, disabled: true },
   { href: '/dashboard/settings', label: 'Configuración', Icon: Settings, disabled: true },
 ]
